@@ -16,6 +16,7 @@ def get_bert_embeddings(text):
         outputs = model(**inputs)
     return outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
 
+
 def extract_skills(text):
     return set(token.lower() for token in text.split() if token.isalpha())
 
